@@ -1,0 +1,29 @@
+version: "3.1"
+services:
+
+        php:
+                container_name: esgi-apache
+                build: .
+                volumes:
+                        - ./www:/var/www/html
+                links:
+                        - mariadb:db
+                ports:
+                        - "8880:80"
+
+        mariadb:
+                container_name: esgi-mariadb-apache
+                image: mariadb
+                environment:
+                        MYSQL_ROOT_PASSWORD: root
+
+        phpmyadmin:
+                container_name: esgi-phpmyadmin-apache
+                image: phpmyadmin/phpmyadmin
+                links:
+                        - mariadb:db
+                ports:
+                        - "8881:80"
+                environment:
+                        MYSQL_USERNAME : root
+                        MY_ROOT_PASSWORD: root
