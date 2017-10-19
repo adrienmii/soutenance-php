@@ -14,7 +14,7 @@ cd soutenance-php
 docker-compose build
 docker-compose up -d
 ```
-
+Pour supprimer les containers et les images (bien être dans le bon dossier)
 ```
 docker-compose down -rmi all
 ```
