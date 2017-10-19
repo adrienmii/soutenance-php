@@ -7,7 +7,7 @@ git clone https://github.com/adrienmii/soutenance-php.git
 ```
 
 ```
-cd php
+cd soutenance-php
 ```
 
 ```
